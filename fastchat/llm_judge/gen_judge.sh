@@ -1,16 +1,16 @@
 python gen_model_answer.py \
-    --model-path /datadrive1/finetuned_models/finetune_llama2_chat_7b_Attention/checkpoint.0 \
-    --model-id finetune_llama2_chat_7b_Attention \
-    # --num-gpus-total 4
+    --model-path /datadrive1/ken/.cache/huggingface/hub/models--meta-llama--Llama-2-7b-hf/snapshots/8cca527612d856d7d32bd94f8103728d614eb852 \
+    --model-id llama2_7b \
 
 python gen_judgment.py \
     --model-list \
-        finetune_llama2_chat_7b_Attention \
+        llama2_7b \
     --parallel 3 \
     --judge-model gpt-4
 
 python show_result.py \
     --model-list \
+        llama2_7b \
         llama2_chat_7b \
         finetune_llama2_chat_7b \
         finetune_llama2_chat_7b_FFNet \
